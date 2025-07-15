@@ -1,17 +1,18 @@
 // NavBar.js
 import { Link } from "react-router-dom";
+import "../../src/NavBar.css"
 
 function NavBar() {
 
   return (
-    <nav className="navbar">
-      <h1 className="header">CalCheck</h1>
-      <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/calendar">Calendar</Link>
-        <Link to="/tasks">Tasks</Link>
-      </div>
-    </nav>
+    <div>
+      <nav className="navbar">
+        <div className="nav-links">
+          <Link className="calendar-link" to="/calendar">Calendar</Link>
+          <Link className="tasks-link" to="/tasks">Tasks</Link>
+        </div>
+      </nav>
+    </div>
   )
 }
 

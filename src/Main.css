@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+body {
+  margin: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/home/priscila_95/Development/code/phase-2/phase-2-project/public/images/colored-squares.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  margin: 0px;
+  color: #fff;
+  text-decoration: none;
+  padding-top: 1%;
+  padding-left: 1%;
+}
+
+.glass-container {
+  width: 300px;
+  height: 350px;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+
+.glass-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+.login-box {
+  max-width: 250px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login-header {
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: -20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.login-username-input, .login-password-input {
+  padding: 10px;
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #fff;
+  font-size: 13px;
+}
+
+.login-username-input::placeholder, 
+.login-password-input::placeholder {
+  color: #fff
+}
+
+.login-username-input:focus, 
+.login-password-input:focus {
+  outline: none;
+}
+
+.options{
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+  color: white;
+}
+
+.options input {
+  margin-right: 5px;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+.options span {
+  text-decoration: none;
+  color: white;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+button {
+  background: #fff;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background: transparent;
+  color: white;
+  outline: 1px solid #fff;
+}
+
+.main-q {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.disabled-register-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
