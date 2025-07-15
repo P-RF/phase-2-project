@@ -1,0 +1,133 @@
+body {
+  font-family: 'Comfortaa', sans-serif;
+  width: 400px;
+  border: none;
+}
+
+.header {
+  text-align: center;
+}
+
+.calendar {
+  width: 350px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  padding: 16px;
+}
+
+.month, .year {
+  text-align: center;
+  margin: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.month {
+  font-size: 1.8rem;
+}
+
+.year {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.navbar {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.nav-buttons button {
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background: #d1d1d1;
+}
+
+.login-box {
+    text-align: center;
+}
+
+.login-form {
+  text-align: center;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+  margin: 0 0 8px 0;
+}
+
+.weekdays span {
+  font-size: 0.85rem;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+
+.days h3 {
+  grid-column: 1 / -1;
+  font-size: 1rem;
+  margin: 0 0 8px 0;
+  color: #1a73e8;
+}
+
+.days span {
+  background: #f9f9f9;
+  padding: 10px 0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.days span:hover {
+  background-color: #e1eaff;
+}
+
+.days span.today {
+  background-color: #1a73e8;
+  color: white;
+  font-weight: 700;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(26, 115, 232, 0.7);
+}
+
+/* Example: highlight today's date if you want */
+/* .days span.today {
+  background-color: #1a73e8;
+  color: white;
+  font-weight: 700;
+} */

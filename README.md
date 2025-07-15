@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# JSON Server Template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup
 
-## Available Scripts
+Fork and clone this repo. Then install the dependencies by running:
 
-In the project directory, you can run:
+```sh
+npm install
+```
 
-### `npm start`
+## Seeding Data
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To set up your database, update the `db/seeds.json` file to contain an object
+with a key pointing to an array of data, like this:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```json
+{
+  "toys": [
+    {
+      "id": 1,
+      "name": "Woody",
+      "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
+      "likes": 8
+    },
+    {
+      "id": 2,
+      "name": "Buzz Lightyear",
+      "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
+      "likes": 14
+    }
+  ]
+}
+```
 
-### `npm test`
+Then, run `npm run seed` to copy data from the `db/seeds.json` file to the
+`db/db.json` file. `json-server` uses the `db.json` file to create your RESTful
+API, so make sure your `db.json` file is always up to date!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Any time you want to reset your database back to your original data, run
+`npm run seed` again. Doing this will overwrite all the data in your `db.json`
+file, so make sure you don't have any data in that file that you don't mind
+losing!
 
-### `npm run build`
+## Running the Server Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run your server in development mode, run:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+While running in development mode, the server will re-load any time you make
+changes to the `db.json` file, so you can test our your seed data.
 
-### `npm run eject`
+While your server is running, you can make requests to
+[http://localhost:3000](http://localhost:3000). Check it out in the browser to
+make sure your server works!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Deploying
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Free services like Render make it simple to deploy your Node server. Render also
+works nicely with Rails, which you'll learn later in the program.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Sign Up for a Render Account
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You can sign up for a free account at
+[https://dashboard.render.com/register][Render signup]. We recommend that you
+sign up using GitHub as that will make it a little easier for you to connect
+Render to your GitHub account. The instructions below assume you've done that.
 
-## Learn More
+[Render signup]: https://dashboard.render.com/register
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Once you've completed the signup process, you will be taken to the Render
+dashboard.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In order to connect Render to your GitHub account, you'll need to click the "New
+Web Service" button in the "Web Services" box. On the next page, you will see a
+GitHub heading on the right side and below that a link labeled "Configure
+account". (If you didn't sign up using GitHub, it will say "Connect account"
+instead.) Click that link; a modal will appear asking you for permission to
+install Render on your GitHub account. Click "Install." You should then be taken
+back to the "Create a New Web Service" page, which should now show a list of
+your GitHub repos.
 
-### Code Splitting
+### Deploy the Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Find the GitHub repo for your json server in the list and click Connect. Give
+the web service a name and make sure the Environment is set to Node. Everything
+else can be left as is. Scroll down to the bottom of the page and click "Create
+Web Service." The build process will begin automatically.
 
-### Analyzing the Bundle Size
+The URL for your deployed server is shown in the upper left corner of the page,
+e.g., `https://my-server.onrender.com`. Once the build is complete, you will be able to
+make fetch requests to that URL.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Making Updates
 
-### Making a Progressive Web App
+Since Render deployment integrates with your GitHub repo, you can easily deploy
+changes to your database. First, commit and push your code up to GitHub:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```sh
+git add .
+git commit -m "Updated database"
+git push
+```
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then launch the build process by going to the page for your server on the
+Render dashboard, clicking the "Manual Deploy" button in the upper right corner
+of the page, and selecting "Deploy latest commit."

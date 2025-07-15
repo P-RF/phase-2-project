@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+
+import NavBar from "./components/NavBar";
+import AppRoutes from "./components/AppRoutes";
+import './style.css';
 
 function App() {
+  const [days, setDays] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/calendar")
+    .then(r => r.json())
+    .then((data) => {
+      setDays(data.days);
+      setTasks(data.tasks);
+      setIsLoading(false)
+    })
+    .catch((error) => {
+      console.error("Error fetching calendar", error);
+    });
+  }, []);
+
+  if (isLoading) return <p>Loading...</p>
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <AppRoutes days={days} tasks={tasks} />
+    </>
   );
 }
 
