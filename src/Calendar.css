@@ -112,3 +112,13 @@
   font-size: 0.95rem;
   user-select: none;
 }
+
+.task-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  margin-top: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
