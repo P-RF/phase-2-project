@@ -1,8 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
 
+// header with link that takes user to main page -- consistent navigation for all pages
 function Layout() {
   return (
-    <div>
+    <div className="app-header">
       <header>
         <Link className="main-link" to="/">
           <h1 className="header">LifeTask</h1>

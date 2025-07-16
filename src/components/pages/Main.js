@@ -4,15 +4,15 @@ import { useNavigate } from "react-router-dom";
 import "../../../src/Main.css";
 
 function Main() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("")
-  const navigate = useNavigate();
+  const [username, setUsername] = useState(""); // initializes state variable with and empty string (username)
+  const [password, setPassword] = useState("") // initializes state variable with and empty string (password)
+  const navigate = useNavigate(); // initializes the navigate function to allow user to change the URL
 
-  const handleSignIn = (e) => {
-    e.preventDefault();
-    if (username.trim()) {
-      localStorage.setItem("username", username);
-      navigate("/calendar");
+  const handleSignIn = (e) => {   // 
+    e.preventDefault();   // stops page from reloading after form submission
+    if (username.trim()) {  // ensures username doe snot have empty spaces. If so, spaces are removed
+      localStorage.setItem("username", username); // saves username in local storage, even if page reloads
+      navigate("/calendar");  // once user is logged in, user is redirected to the calendar page
     }
   };
 

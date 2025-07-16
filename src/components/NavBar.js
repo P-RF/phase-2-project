@@ -4,7 +4,7 @@ import "../../src/NavBar.css"
 
 function NavBar() {
 
-  return (
+  return (   // renders navigation bar with buttons. One for Calendar page and the other for Tasks page
     <div>
       <nav className="navbar">
         <div className="nav-links">

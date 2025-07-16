@@ -1,16 +1,30 @@
 // Calendar.js
+import React, { useContext, useState } from "react";
 import { BiChevronLeft, BiChevronDown, BiChevronRight } from "react-icons/bi";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { formatDateString } from "../../utils/dateUtils";
+import { formatDateString } from "../../utils/DateUtils";
+import { TasksContext } from "../../utils/TasksContext";
 import "../../../src/Calendar.css"
 
-function Calendar({ tasks }) {
-  const navigate = useNavigate();
+function Calendar() {
+  const { tasks } = useContext(TasksContext); // access values form 'TasksContext' using useContext
+
+  const navigate = useNavigate(); // change the current route after clicking a specific date: from 'calendar' to 'tasks'
 
   const today = new Date(); // creates js object for date
-  const [year, setYear] = useState(today.getFullYear()); // initializes a state variable for the current year
-  const [month, setMonth] = useState(today.getMonth()); // initializes a state variable for the current month
+
+  // Destructure parts of 'today'
+  const todayDate = today.getDate();
+  const todayMonth = today.getMonth();
+  const todayYear = today.getFullYear();
+
+
+  const [year, setYear] = useState(todayYear); // initializes a state variable for the current year
+  const [month, setMonth] = useState(todayMonth); // initializes a state variable for the current month
+
+  const isToday = (day) => { // checks if the number/month/year passed matches the current day, month, and year (0 for Jan)
+    return (day === todayDate && month === todayMonth && year === todayYear);
+  };
 
   const weekdays = ["Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const monthNames = [
@@ -20,10 +34,6 @@ function Calendar({ tasks }) {
 
   const daysInMonth = new Date(year, month + 1, 0).getDate(); //  returns the day of the month for this date according to local time
   const daysArray = Array.from({ length: daysInMonth}, (_,i) => i + 1 ); // generates an array representing the days in a month
-
-  const isToday = (day) => { // checks if the number/month/year passed matches the current day, month, and year (0 for Jan)
-    return (day === today.getDate() && month === today.getMonth() && year === today.getFullYear());
-  };
 
   const handleDayClick = (day) => {   // when user clicks on a day, user is taken to /task url for that date
     const dateString = formatDateString(year, month, day) // combines year, month, and day into a string

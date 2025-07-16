@@ -1,4 +1,5 @@
   //dateUtils.js
+  // passed down to child components
 
   export const formatDateString = (year, month, day) => { // formats the given year, month, and day into a string "YYY-MM-DD"
     const monthString = (month + 1).toString().padStart(2, '0'); // month is always two digits
