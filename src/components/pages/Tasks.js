@@ -1,11 +1,19 @@
 // Tasks.js
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
+import { formatDateString } from "../../utils/dateUtils";
 import "../../../src/Tasks.css"
 
-function Tasks({ days, tasks, addTask, toggleTask, deleteTask }) {
+function Tasks({ tasks, addTask, toggleTask, deleteTask }) {
   const { date } = useParams();
   const [newTask, setNewTask] = useState("");
+
+  // redirect if no date is provided
+  if (!date) {
+    const today = new Date();
+    const todayString = formatDateString(today.getFullYear(), today.getMonth(), today.getDate());
+    return (<Navigate to={`/tasks/${todayString}`} replace />)
+  };
 
   const filteredTasks = tasks.filter(task => task.date === date);
 

@@ -2,14 +2,15 @@
 import { BiChevronLeft, BiChevronDown, BiChevronRight } from "react-icons/bi";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { formatDateString } from "../../utils/dateUtils";
 import "../../../src/Calendar.css"
 
-function Calendar({ days, tasks }) {
+function Calendar({ tasks }) {
   const navigate = useNavigate();
 
-  const today = new Date();
-  const [year, setYear] = useState(today.getFullYear());
-  const [month, setMonth] = useState(today.getMonth());
+  const today = new Date(); // creates js object for date
+  const [year, setYear] = useState(today.getFullYear()); // initializes a state variable for the current year
+  const [month, setMonth] = useState(today.getMonth()); // initializes a state variable for the current month
 
   const weekdays = ["Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const monthNames = [
@@ -17,31 +18,26 @@ function Calendar({ days, tasks }) {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  const daysInMonth = new Date(year, month + 1, 0).getDate(); //  returns the day of the month for this date according to local time.
-  const daysArray = Array.from({ length: daysInMonth}, (_,i) => i + 1 ); // generates an array representing the days in a month.
+  const daysInMonth = new Date(year, month + 1, 0).getDate(); //  returns the day of the month for this date according to local time
+  const daysArray = Array.from({ length: daysInMonth}, (_,i) => i + 1 ); // generates an array representing the days in a month
 
-  const isToday = (day) => {
+  const isToday = (day) => { // checks if the number/month/year passed matches the current day, month, and year (0 for Jan)
     return (day === today.getDate() && month === today.getMonth() && year === today.getFullYear());
   };
 
-  const handleDayClick = (day) => {
-    const dateString = formatDateString(year, month, day)
+  const handleDayClick = (day) => {   // when user clicks on a day, user is taken to /task url for that date
+    const dateString = formatDateString(year, month, day) // combines year, month, and day into a string
     navigate(`/tasks/${dateString}`)
   };
 
-  const weekdaySpans = weekdays.map((day) => <span key={day}>{day}</span>)
+  // loops through weeksays array for each day and creates a span element for each 
+  const weekdaySpans = weekdays.map((day) => <span key={day}>{day}</span>) 
 
-  const formatDateString = (year, month, day) => {
-    const monthString = (month + 1).toString().padStart(2, '0');
-    const dayString = day.toString().padStart(2, '0')
-    return `${year}-${monthString}-${dayString}`
-  }
+  const daySpans = daysArray.map((day) => {     // current day
+    const dateString = formatDateString(year, month, day);  // new variable (avoid repetition) - converts date to string ex: "2025-01-15"
+    const hasTasks = tasks?.some(task => task.date === dateString)  // checks for a task on a day
 
-  const daySpans = daysArray.map((day) => {
-    const dateString = formatDateString(year, month, day);
-    const hasTasks = tasks?.some(task => task.date === dateString)
-
-    return (
+    return (    // if there is a task on a given day, it adds a dot
       <span 
         key={day} 
         className={`day ${isToday(day) ? "today" : ""}`}
@@ -50,24 +46,24 @@ function Calendar({ days, tasks }) {
         <div 
           className="day-number">
             {day}
-            {hasTasks && <div className="task-dot"/>}
+            {hasTasks && <div className="task-dot"/>}   
         </div>
       </span>);
   });
 
-  const prevMonth = () => {
+  const prevMonth = () => {       // calendar button movement - back
     if (month === 0) {
       setMonth(11);
-      setYear((prev) => prev - 1);
+      setYear((prev) => prev - 1); // year change (adjust year according to month ahead: Jan 2025 <- Dec 2024)
     } else {
-      setMonth((prev) => prev - 1);
+      setMonth((prev) => prev - 1); // month change
     }
   };
 
-  const nextMonth = () => {
+  const nextMonth = () => {     // calendar button movement - forward
     if (month === 11) {
       setMonth(0);
-      setYear((prev) => prev + 1);
+      setYear((prev) => prev + 1); // year change (adjust year according to month ahead: Dec 2024 -> Jan 2025)
     } else {
       setMonth((prev) => prev + 1);
     }
