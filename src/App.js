@@ -1,13 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 
 import NavBar from "./components/NavBar";
 import AppRoutes from "./components/AppRoutes";
 import '../src/Calendar.css';
 
+export const TasksContext = createContext();
+
 function App() {
   const [days, setDays] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const addTask = ({ text, date }) => {
+    const newTask = {
+      id: Date.now(),
+      text,
+      date,
+      completed: false,
+    };
+    setTasks([...tasks, newTask])
+  };
+  
+  const toggleTask = (id) => {
+    setTasks(prevTasks =>
+      prevTasks.map(task => task.id === id ? {...task, completed: !task.completed} : task));
+  };
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter(task => task.id !== id));
+  };
 
   useEffect(() => {
     fetch("http://localhost:3000/calendar")
@@ -27,7 +48,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <AppRoutes days={days} tasks={tasks} />
+      <AppRoutes days={days} tasks={tasks} addTask={addTask} toggleTask={toggleTask} deleteTask={deleteTask} />
     </>
   );
 }

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../src/Calendar.css"
 
-function Calendar() {
+function Calendar({ days }) {
   const navigate = useNavigate();
 
   const today = new Date();
@@ -13,7 +13,7 @@ function Calendar() {
 
   const weekdays = ["Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const monthNames = [
-    "January", "Febryary", "March", "April", "May", "June", 
+    "January", "February", "March", "April", "May", "June", 
     "July", "August", "September", "October", "November", "Decemeber"
   ];
 
