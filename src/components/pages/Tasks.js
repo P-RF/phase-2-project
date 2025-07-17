@@ -1,12 +1,12 @@
 // Tasks.js
 import React, { useState, useContext } from "react";
-import { TasksContext } from "../../utils/TasksContext";
 import { Navigate, useParams } from "react-router-dom";
-import { formatDateString } from "../../utils/DateUtils";
+import { TasksContext } from "../utils/tasksContext";
+import { formatDateString } from "../utils/dateUtils";
 import "../../../src/Tasks.css"
 
 function Tasks() {
-  const {tasks, addTask, toggleTask, deleteTask} = useContext(TasksContext); // useContext hook allows access to TasksContent component with values
+  const {tasks = [], addTask, toggleTask, deleteTask} = useContext(TasksContext); // useContext hook allows access to TasksContent component with values
 
   const { date } = useParams(); // extracts the URL parameter (date)
   const [newTask, setNewTask] = useState(""); // sets up a state variable 'newTask' to hold the input value of a new task that is typed

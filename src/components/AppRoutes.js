@@ -17,7 +17,7 @@ import Layout from "./Layout";
         <Route element={<Layout />}> 
           <Route path="/" element={<Main />} />
           <Route path="/calendar" element={<Calendar />} />
-          <Route path="/tasks/:date" element={<Tasks />} />
+          <Route path="/tasks/:date?" element={<Tasks />} />
         </Route>
       </Routes>
   );

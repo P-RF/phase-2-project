@@ -2,12 +2,12 @@
 import React, { useContext, useState } from "react";
 import { BiChevronLeft, BiChevronDown, BiChevronRight } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { formatDateString } from "../../utils/DateUtils";
-import { TasksContext } from "../../utils/TasksContext";
+import { formatDateString } from "../utils/dateUtils";
+import { TasksContext } from "../utils/tasksContext";
 import "../../../src/Calendar.css"
 
 function Calendar() {
-  const { tasks } = useContext(TasksContext); // access values form 'TasksContext' using useContext
+  const { tasks } = useContext(TasksContext); // access values form 'TasksContext' using useContext -- no props
 
   const navigate = useNavigate(); // change the current route after clicking a specific date: from 'calendar' to 'tasks'
 
@@ -47,14 +47,14 @@ function Calendar() {
     const dateString = formatDateString(year, month, day);  // new variable (avoid repetition) - converts date to string ex: "2025-01-15"
     const hasTasks = tasks?.some(task => task.date === dateString)  // checks for a task on a day
 
-    return (    // if there is a task on a given day, it adds a dot
-      <span 
+    return (
+      <span // when user clicks on a day, user navigates to tasks for the selected date
         key={day} 
         className={`day ${isToday(day) ? "today" : ""}`}
         onClick={() => handleDayClick(day)}
         >
-        <div 
-          className="day-number">
+        <div // if there is a task on a given day, it adds a dot
+          className="day-number">   
             {day}
             {hasTasks && <div className="task-dot"/>}   
         </div>

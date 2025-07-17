@@ -1,5 +1,3 @@
-# JSON Server Template
-
 ## Setup
 
 Fork and clone this repo. Then install the dependencies by running:
@@ -15,20 +13,16 @@ with a key pointing to an array of data, like this:
 
 ```json
 {
-  "toys": [
-    {
-      "id": 1,
-      "name": "Woody",
-      "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 8
-    },
-    {
-      "id": 2,
-      "name": "Buzz Lightyear",
-      "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 14
-    }
-  ]
+  "calendar": {
+      "days": [
+      {"id": 1, "date": "2025-07-11"},
+      {"id": 2, "date": "2025-07-12"}
+    ],
+    "tasks": [
+      {"id": 1, "dayId": 1, "text": "Call mom", "completed": false, "date":"2025-07-11"},
+      {"id": 2, "dayId": 2, "text": "Donate clothes", "completed": false, "date": "2025-07-12"}
+    ]
+  }
 }
 ```
 
@@ -107,3 +101,5 @@ git push
 Then launch the build process by going to the page for your server on the
 Render dashboard, clicking the "Manual Deploy" button in the upper right corner
 of the page, and selecting "Deploy latest commit."
+
+Happy coding!
