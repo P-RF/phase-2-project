@@ -7,8 +7,8 @@ A simple API powered by `json-server` task management application. This project 
 - [Key Components](#key-components)
 - [Project Structure](#project-structure)
 - [Data Format](#data-format)
-- [API Endpoints](#api-endpoints)
 - [Getting Started](#getting-started)
+- [API Endpoints](#api-endpoints)
 - [Deploying](#deploying)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
@@ -20,7 +20,7 @@ A simple API powered by `json-server` task management application. This project 
 - Simple integration with frontend apps
 - Live reloading with development mode
 
-![LifeTask app gif](public/images/lifetask_features.gif)
+![Preview of LifeTask app features](public/images/lifetask_features.gif)
 
 ## Technologies 📱
 1. **React** – For building the UI
@@ -104,12 +104,6 @@ The main components in this project include reusable page views like Main (LifeT
   ]
 }
 ```
-## API Endpoints 🔌
-The JSON server will run at  http://localhost:3000
-### Available Routes
-#### Resource & URL
-- Days: http://localhost:3000/days
-- Tasks: http://localhost:3000/tasks
 
 ## Getting Started 👟
 1. **Fork** and **clone** this repo
@@ -124,7 +118,16 @@ cd phase-2-project
 View project repo at: 
 https://github.com/P-RF/phase-2-project
 
-## Deploying 🚀
+## API Endpoints 🔌
+Start the development server The JSON server before accessing these routes.
+### Available Routes
+#### Resource & URL
+- Days: http://localhost:3000/days
+- Tasks: http://localhost:3000/tasks
+#### Home
+- Home: http://localhost:3000
+
+## Deploying 🛳
 You can deploy your JSON server for free using [Render](https://dashboard.render.com)
 
 ### Steps
@@ -159,7 +162,7 @@ json-server --watch db.json --port 3001
 - Check that `db.json` exists and is valid JSON.
 - Use the browser's dev tools to debug HTTP requests.
 
-## Contributing 🖋
+## Contributing 🤝
 Thank you for your interest in contributing! Below are the steps on how to do so:
 1. **Fork** the repository on GitHub
 2. **Clone** the repository to your local computer:
@@ -195,6 +198,6 @@ git push
     * Submit the PR and follow the review process
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/#)
 
 Happy coding!
