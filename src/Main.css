@@ -4,7 +4,7 @@
   font-family: 'Comfortaa', sans-serif;
 }
 
-body {
+/* body {
   margin: 0;
   display:flex;
   justify-content: center;
@@ -14,7 +14,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
 
 .header {
   position: absolute;
