@@ -132,11 +132,11 @@ You can deploy your JSON server for free using [Render](https://dashboard.render
 
 ### Steps
 1. Sign up for a [Render](https://dashboard.render.com) account using your GitHub account.
-2. Click **New Web Service** and connect your GitHub repo.
+2. Click **New > Web Service** and connect your GitHub repo.
 3. Fill out the setup form:
     - Name: *choose any name*
     - Environment mode: *Node*
-4. Click **Create Web Service**
+4. Click **Deploy Web Service**
 5. Wait for the build to complete
 6. Access your server at the given Render URL
 
