@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function useTasks() {
+export default function useTasks() { // all logic related to fetching 
   const [tasks, setTasks] = useState([])
   const [isLoading, setIsLoading] = useState(true); // local state variable to track if task is loading from API
 

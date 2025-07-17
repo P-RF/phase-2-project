@@ -4,10 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { TasksContext } from './components/utils/tasksContext';
 import useTasks from '../src/components/utils/useTasks';
 
-export default function Root() {
+export default function Root() { // useTasks handles Fetch CRUD - Fetch requests for GET, POST, PATCH, and DELETE
   const { tasks, isLoading, addTask, toggleTask, deleteTask } = useTasks();
 
-  if (isLoading) return <p>Loading...</p> // conditional. If it is loading, it immediately displays "Loading..." to user
+  if (isLoading) return <p>Loading...</p> // shows 'loading' message to the user while the data is being fetched
 
 
   return (    // pass props to child components via useContext(TaskContent) -- Global state & client-side routing
