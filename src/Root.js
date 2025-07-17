@@ -1,4 +1,5 @@
 import React from 'react';
+import 'boxicons/css/boxicons.min.css';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
 import { TasksContext } from './components/utils/tasksContext';
