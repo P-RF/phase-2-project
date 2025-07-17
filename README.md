@@ -2,26 +2,26 @@
 A simple API powered by `json-server` task management application. This project is a minimum viable product (MVP) that allows its users to organize their tasks by day with essential CRUD functionality.
 
 ## Table of Contents 📖
-* [Key Components](#key-components)
-* [Features](#features)
-* [Technologies](#technologies)
-* [API Endpoints](#api-endpoints)
-* [Project Structure](#project-structure)
-* [Data Format](#data-format)
-* [Getting Started](#getting-started)
-* [Deploying](#deploying)
-* [Troubleshooting](#troubleshooting)
-* [Contributing](#contributing)
-* [License](#license)
+- [Key Components](#key-components)
+- [Features](#features)
+- [Technologies](#technologies)
+- [API Endpoints](#api-endpoints)
+- [Project Structure](#project-structure)
+- [Data Format](#data-format)
+- [Getting Started](#getting-started)
+- [Deploying](#deploying)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Key Components 🔑
 The main components in this project include reusable page views like Main, Calendar, and Tasks. Layout wrappers and shared hooks/context are other core components which are used for managing task data.
 
 ## Features ⭐
-* RESTful API for tasks and days
-* Local JSON storage with data
-* Simple integration with frontend apps
-* Live reloading with development mode
+- RESTful API for tasks and days
+- Local JSON storage with data
+- Simple integration with frontend apps
+- Live reloading with development mode
 
 ## Technologies 📱
 1. **React** – For building the UI
@@ -129,8 +129,8 @@ You can deploy your JSON server for free using [Render](https://dashboard.render
 1. Sign up for a [Render](https://dashboard.render.com) account using your GitHub account.
 2. Click **New Web Service** and connect your GitHub repo.
 3. Fill out the setup form:
-    * Name: *choose any name*
-    * Environment mode: *Node*
+    - Name: *choose any name*
+    - Environment mode: *Node*
 4. Click **Create Web Service**
 5. Wait for the build to complete
 6. Access your server at the given Render URL
@@ -146,16 +146,16 @@ git push
 3. Go to **Render** dashboard > your service > Manual Deploy > Deploy latest commit
 
 ## Troubleshooting 🧰
-* Ensure `json-server` is installed globally if `npm run dev` fails.
+- Ensure `json-server` is installed globally if `npm run dev` fails.
 ```sh 
 npm install -g json-server
 ```
-* If port 3000 is in use, change the port:
+- If port 3000 is in use, change the port:
 ```sh
 json-server --watch db.json --port 3001
 ```
-* Check that `db.json` exists and is valid JSON.
-* Use the browser's dev tools to debug HTTP requests.
+- Check that `db.json` exists and is valid JSON.
+- Use the browser's dev tools to debug HTTP requests.
 
 ## Contributing 🖋
 Thank you for your interest in contributing! Below are the steps on how to do so:
