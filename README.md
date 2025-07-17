@@ -2,28 +2,25 @@
 A simple API powered by `json-server` task management application. This project is a minimum viable product (MVP) that allows its users to organize their tasks by day with essential CRUD functionality.
 
 ## Table of Contents 📖
-- [Key Components](#key-components)
 - [Features](#features)
 - [Technologies](#technologies)
-- [API Endpoints](#api-endpoints)
+- [Key Components](#key-components)
 - [Project Structure](#project-structure)
 - [Data Format](#data-format)
+- [API Endpoints](#api-endpoints)
 - [Getting Started](#getting-started)
 - [Deploying](#deploying)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Key Components 🔑
-The main components in this project include reusable page views like Main, Calendar, and Tasks. Layout wrappers and shared hooks/context are other core components which are used for managing task data.
-
-![LifeTask app gif](public/images/lifetask_features.gif)
-
 ## Features ⭐
 - RESTful API for tasks and days
 - Local JSON storage with data
 - Simple integration with frontend apps
 - Live reloading with development mode
+
+![LifeTask app gif](public/images/lifetask_features.gif)
 
 ## Technologies 📱
 1. **React** – For building the UI
@@ -33,12 +30,8 @@ The main components in this project include reusable page views like Main, Calen
 5. **CSS** – For styling the web application and some functionality
 6. **`json-server`** – Serves mock RESTful API based on the `db.json` file
 
-## API Endpoints 🔌
-The JSON server will run at  http://localhost:3000
-### Available Routes
-#### Resource & URL
-- Days: http://localhost:3000/days
-- Tasks: http://localhost:3000/tasks
+## Key Components 🔑
+The main components in this project include reusable page views like Main (LifeTask logo), Calendar, and Tasks. Layout wrappers and shared hooks/context are other core components which are used for managing task data. Tasks can be added, marked complete with a checkbox, and deleted.
 
 ## Project Structure 🏗
 ```pgsql
@@ -111,6 +104,13 @@ The JSON server will run at  http://localhost:3000
   ]
 }
 ```
+## API Endpoints 🔌
+The JSON server will run at  http://localhost:3000
+### Available Routes
+#### Resource & URL
+- Days: http://localhost:3000/days
+- Tasks: http://localhost:3000/tasks
+
 ## Getting Started 👟
 1. **Fork** and **clone** this repo
 ```sh
