@@ -2,17 +2,17 @@
 A simple API powered by `json-server` task management application. This project is a minimum viable product (MVP) that allows its users to organize their tasks by day with essential CRUD functionality.
 
 ## Table of Contents 📖
-* Key Components
-* Features
-* Technologies
-* API Endpoints
-* Project Structure
-* Data Format
-* Getting Started
-* Deploying
-* Troubleshooting
-* Contributing
-* License
+* [Key Components](#key-components)
+* [Features](#features)
+* [Technologies](#technologies)
+* [API Endpoints](#api-endpoints)
+* [Project Structure](#project-structure)
+* [Data Format](#data-format)
+* [Getting Started](#getting-started)
+* [Deploying](#deploying)
+* [Troubleshooting](#troubleshooting)
+* [Contributing](#contributing)
+* [License](#license)
 
 ## Key Components 🔑
 The main components in this project include reusable page views like Main, Calendar, and Tasks. Layout wrappers and shared hooks/context are other core components which are used for managing task data.
