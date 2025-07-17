@@ -17,6 +17,9 @@ A simple API powered by `json-server` task management application. This project 
 ## Key Components 🔑
 The main components in this project include reusable page views like Main, Calendar, and Tasks. Layout wrappers and shared hooks/context are other core components which are used for managing task data.
 
+![LifeTask screen recording](public/images/lifetask_screen_recording.gif)
+
+
 ## Features ⭐
 - RESTful API for tasks and days
 - Local JSON storage with data
