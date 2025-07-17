@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("/home/priscila_95/Development/code/phase-2/phase-2-project/public/images/colored-squares.jpg");
+  background-image: url("../public/images/colored-squares.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
