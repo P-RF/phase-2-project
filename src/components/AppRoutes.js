@@ -11,13 +11,13 @@ import Layout from "./Layout";
   return (    /* routes in a shared layout component. 
   Respective URLs for Main, Calendar, and Tasks. 
   Tasks requires date (replacing id). 
-  ReactRouter figured out which page to render according to URL.
+  ReactRouter figures out which page to render according to URL.
   */ 
       <Routes> 
         <Route element={<Layout />}> 
           <Route path="/" element={<Main />} />
           <Route path="/calendar" element={<Calendar />} />
-          <Route path="/tasks/:date?" element={<Tasks />} />
+          <Route path="/tasks/:date" element={<Tasks />} />
         </Route>
       </Routes>
   );

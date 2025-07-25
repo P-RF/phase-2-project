@@ -12,17 +12,33 @@
   "tasks": [
     {
       "id": 1,
-      "dayId": 1,
       "text": "Donate clothes",
       "completed": false,
       "date": "2025-07-11"
     },
     {
       "id": 2,
-      "dayId": 2,
       "text": "Call mom",
       "completed": false,
       "date": "2025-07-12"
+    },
+    {
+      "text": "Do laundry",
+      "date": "2025-07-24",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "text": "Walk dog",
+      "date": "2025-07-24",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "text": "Clean floor",
+      "date": "2025-07-24",
+      "completed": false,
+      "id": 5
     }
   ]
 }
